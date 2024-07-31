@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação API</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 class="title">API login-jwt</h1>
+    <h2>Rota Publica Get: https://login-jwt-79k0.onrender.com/</h2>
+    <div class="Margin">
+        <img class="img" src="img/publicRoute.png" alt="Rota Publica">
+        <h1>Retorno esperado:</h1>
+        <pre>
+                {
+                    "msg": "HELLO WORLD!"
+                }
+            </pre>
+    </div>
+    <div class="Margin">
+        <h1>.Endipoint de cadastro de usuarios: auth/register</h1>
+        <br>
+    </div>
+    <div class="Margin">
+        <h1>Parametros:<h1>
+                <ul>
+                    <li>"name"</li>
+                    <li>"mail"</li>
+                    <li>"password"</li>
+                    <li>"ConfirmPassport"</li>
+                </ul>
+    </div>
+    <div class="Margin">
+        <h1>.Exemplo</h1>
+        <p>(URL): https://login-jwt-79k0.onrender.com/auth/register</p>
+        <pre>
+                {
+                    "name": "usuario",
+                    "mail": "usuario@gmail.com"
+                    "password": "segurança123"
+                    "ConfirmPassport":"segurança123"
+                }
+            </pre>
+        <img class="img" src="img/register.png" alt="Registro">
+    </div>
+    <div class="Margin">
+        <h1>Retorno esperado:</h1>
+        <pre>
+                {
+                    "msg": "Email já registrado. Por favor utilize outro!"
+                }
+            </pre>
+    </div>
+    <div class="Margin">
+        <h1>.Endpoint de login: authlogin/login</h1>
+        <p>(URL): https://login-jwt-79k0.onrender.com/authlogin/login</p>
+        <pre>
+                {
+                    . "mail"
+                    . "password"
+                }
+            </pre>
+        <img class="img" src="img/login.png" alt="login">
+    </div>
+    <div class="Margin">
+        <h1>Retorno esperado:</h1>
+        <pre>
+                {
+                    "msg": "Autenticação realizada com sucesso",
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTkyZjUwZjg5NTUxYTg5YzgzNTA0MCIsImlhdCI6MTcyMjM3MjU2NSwiZXhwIjoxNzIyMzc2MTY1fQ.ak7zEIKbs7-HotF-wrsza-W9m5mliriZvgKWex69VSQ",
+                    "userId": "66a92f50f89551a89c835040"
+                }
+            </pre>
+    </div>
+    <div class="Margin">
+        <h3>Para acessar a rota privada, precisa passar um id como parametro, exemplo:<br></h3>
+        <h4>https://login-jwt-79k0.onrender.com/user/66a92f50f89551a89c835040</h4>
+        <h4>Como é uma rota privada, não esqueça de Passar o Token do usuario registrado como Autorização.</h4>
+        <img class="img" src="img/routePrivada.png" alt="Rota Privada">
+        <h1>Retorno esperado:</h1>
+        <pre>
+                {
+                    "user": {
+                        "_id": "66a94f614a1d02c976fb4e1d",
+                        "name": "thiago22",
+                        "mail": "thiago22@gmail.com",
+                        "__v": 0
+                    }
+                }
+            </pre>
+    </div>
+</body>
+
+</html>
